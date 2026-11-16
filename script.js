@@ -43,11 +43,11 @@ async function getWeather() {
     },
     (e) => {
       console.error(e);
-      setTimeout(getWeather, 1000 * 5); // Retry earlier than the 30mins
     },
   );
 
   if (!params.has("latitude") || !params.has("longitude")) {
+    setTimeout(getWeather, 1000 * 5);
     return;
   }
 

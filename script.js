@@ -1,7 +1,7 @@
 const background = document.getElementById("background");
 
 const nasaUrl =
-  "https://science.nasa.gov/wp-json/wp/v2/apod-basic?api_key=qF2xtffJ6XiUgz0UcWsXzjLHo1UZQSK41EWMegeQ";
+  "https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=qF2xtffJ6XiUgz0UcWsXzjLHo1UZQSK41EWMegeQ";
 // Remember, be careful with what API keys you expose
 // Expose private API keys at your own risk
 //

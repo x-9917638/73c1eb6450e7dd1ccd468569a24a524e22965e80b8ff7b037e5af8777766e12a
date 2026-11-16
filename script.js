@@ -23,7 +23,7 @@ async function getBackground() {
       return null;
     }
 
-    return result.url;
+    return result.hdurl;
   } catch (error) {
     console.log(error.message);
     return null;

@@ -43,7 +43,7 @@ async function getWeather() {
     },
     (e) => {
       console.error(e);
-      setTimeout(getWeather, 1000 * 30); // Retry earlier than the 30mins
+      setTimeout(getWeather, 1000 * 5); // Retry earlier than the 30mins
     },
   );
 
@@ -149,14 +149,14 @@ function checkTime(digit) {
   return digit;
 }
 
-window.onload = function () {
+window.onload = async function () {
   setInterval(clock, 100);
-  getWeather();
+  await getWeather();
   setInterval(getWeather, 1000 * 60 * 10); // Update weather every 10 mins
-  getCat();
+  await getCat();
   setInterval(getCat, 1000 * 60); // 1 min
 
-  getBackground().then(function (imageUrl) {
+  await getBackground().then(function (imageUrl) {
     if (!imageUrl) return;
 
     console.log(imageUrl);

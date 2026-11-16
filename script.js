@@ -13,8 +13,10 @@ async function getBackground() {
       throw new Error(`Response status: ${response.status}`);
     }
 
-    const result = await response.json()[0];
-    console.log(result);
+    const list = await response.json();
+    console.log(list);
+
+    const result = list[0];
 
     if (result.media_type !== "image") {
       console.log("APOD returned a non-image media type.");

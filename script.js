@@ -44,9 +44,12 @@ async function getWeather() {
     (e) => {
       console.error(e);
       setTimeout(getWeather, 1000 * 30); // Retry earlier than the 30mins
-      return;
     },
   );
+
+  if (!params.has("latitude") || !params.has("longitude")) {
+    return;
+  }
 
   params.set("current", "temperature_2m,apparent_temperature,precipitation");
   params.set("timezone", "auto");
